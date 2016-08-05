@@ -2,6 +2,7 @@
   (:require [clojure.string :as str]))
 ;; Getting Declarative with Cats and Manifold
 ;; by Matthew Lyon aka @mattly
+;; https://github.com/mattly/pdxclj-cats-promesa
 
 ;; Lisp - Code is Data, Data is Code
 ;;      One data type, the S-Expression
@@ -11,12 +12,14 @@
 ;; Category Theory - study of patterns and how things relate to each other
 ;;      "the study of abstract bull****" -- some guy on Hacker News
 ;;      But, lots of useful tools for thinking about composition
-;; Great tutorial series: https://bartoszmilewski.com/2014/10/28/category-theory-for-programmers-the-preface/
+;; Great tutorial series:
+;; https://bartoszmilewski.com/2014/10/28/category-theory-for-programmers-the-preface/
 
 ;; Cats - Category Theory abstraction library for clojure
 ;; https://github.com/funcool/cats
 ;; Promesa - Unified clj/cljs interface for non-streaming async computation
 ;; https://github.com/funcool/promesa
+;; lots of other good libraries, under active development
 
 ;; The what isn't important unless you understand the *how*
 ;; how can this help you write cleaner code?
@@ -442,5 +445,6 @@
   (m/alet [a (wait-int 100)
            b (wait-int 50)
            c (wait-int (+ b 100))
-           d (wait-int (+ a b))]
-          (+ a b c d))))
+           d (wait-int (+ a b))
+           z (wait-int 50)]
+          (+ a b c d z))))
