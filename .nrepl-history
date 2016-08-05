@@ -1,0 +1,5 @@
+(Number. "5")
+(Float. "5")
+(every? even?)
+(every? even? [1 2 3])
+(require '[cats.monad.either :as e])
